@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <script src="bootstrap/js/jquery-3.4.0.js"></script>
+    <script src="bootstrap/js/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/css/custom.css">
+    <style>
+        body {
+            font-family: Times New Roman, Calibri, "Lucida Console";
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #040505;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+        input[type=tel], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #040505;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+        input[type=submit] {
+            background-color: blue ;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            border-radius: 1px;
+            background-color:lightsalmon;
+            padding: 2px;
+
+        }
+
+        .column {
+            float: left;
+            width: 50%;
+            margin-top: 6px;
+            padding: 10px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        @media screen and (max-width: 100px) {
+            .column, input[type=submit] {
+                width: 70%;
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<ul>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="index.html">Home</a></li>
+</ul>
+<body>
+<frame>
+<div class="container">
+    <div style="text-align:center">
+        <h2 style="color: blue">Contact Us</marquee></h2>
+    </div>
+    <div class="row">
+        <div class="column">
+            <div id="map" style="width:70%;height:300px"></div>
+        </div>
+        <div class="column">
+            <form action="#">
+                <label for="name"><b>Name</b></label>
+                <input type="text" id="name" name="name" placeholder="Enter your name..">
+                <label for="regNo"><b>Registration Number</b></label>
+                <input type="text" id="regNo" name="regNo" placeholder="Enter your registration number..">
+                <label for="phone_no"><b>Phone Number</b></label>
+                <input type="tel" id="phone_no" name="phone_no" placeholder="Enter your phone number..">
+                <label for="description"><b>Description</b></label>
+                <textarea id="description" name="description" placeholder="Write something about yourself.." style="height:170px"></textarea>
+                <label for="gender"><b>Gender</b></label><br>
+                <input type="radio" name="c">Male<br>
+                <input type="radio" name="c">Female<br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Initialize google maps
+    function myMap() {
+        var myCenter = new google.maps.LatLng(51.508742,-0.120850);
+        var mapCanvas = document.getElementById("map");
+        var mapOptions = {center: myCenter, zoom: 12};
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+        var marker = new google.maps.Marker({position:myCenter});
+        marker.setMap(map);
+    }
+</script>
+</body>
+</frame>
+</html>
